@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/approval-request.schema.json",
+  "title": "KAVEEP Approval Request",
+  "type": "object",
+  "required": [
+    "request_id",
+    "action_name",
+    "risk_level",
+    "approval_level",
+    "reason",
+    "expected_impact",
+    "evidence_summary",
+    "confidence_score",
+    "simulation_completed",
+    "rollback_available",
+    "user_approval_required"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string"
+    },
+    "action_name": {
+      "type": "string"
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": ["R0", "R1", "R2", "R3", "R4", "R5"]
+    },
+    "approval_level": {
+      "type": "string",
+      "enum": ["A0", "A1", "A2", "A3", "A4"]
+    },
+    "reason": {
+      "type": "string"
+    },
+    "expected_impact": {
+      "type": "string"
+    },
+    "evidence_summary": {
+      "type": "string"
+    },
+    "confidence_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "simulation_completed": {
+      "type": "boolean"
+    },
+    "rollback_available": {
+      "type": "boolean"
+    },
+    "user_approval_required": {
+      "type": "boolean"
+    },
+    "approval_status": {
+      "type": "string",
+      "enum": ["not_requested", "pending", "approved", "rejected", "expired"]
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
