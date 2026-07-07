@@ -1,6 +1,6 @@
 # KAVEEP-POLICY
 
-KAVEEP Policy, Safety, Approval, and Governance Authority
+KAVEEP Policy, Safety, Approval, Risk, Evidence, and Governance Authority
 
 Version: 0.1
 
@@ -14,25 +14,24 @@ It defines the rules that all KAVEEP agents must obey before analyzing, recommen
 
 KAVEEP-POLICY is not an execution agent.
 
-It is the governance layer.
+KAVEEP-POLICY is the governance layer.
 
 ---
 
 ## Core Mission
 
-Protect the user.
+KAVEEP-POLICY exists to:
 
-Protect the system.
-
-Protect the repository.
-
-Protect historical continuity.
-
-Prevent unsafe automation.
-
-Require evidence before decisions.
-
-Require approval before action.
+- Protect the user.
+- Protect real user files.
+- Protect the operating system.
+- Protect repositories.
+- Protect historical continuity.
+- Prevent unsafe automation.
+- Require evidence before decisions.
+- Require convergence before important conclusions.
+- Require simulation before execution.
+- Require human approval before real action.
 
 ---
 
@@ -40,10 +39,10 @@ Require approval before action.
 
 ```text
 KAVEEP-POLICY
-      ↓ governs
+      ↓ governs safety, risk, evidence, and approval
 KAVEEP-SIA
       ↓ observes local system state
 KAVEEP-RO
       ↓ observes repository state
 KAVEEP-CORE
-      ↓ coordinates future decisions
+      ↓ future decision coordination layer
