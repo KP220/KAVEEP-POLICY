@@ -1,0 +1,12 @@
+{
+  "evidence_id": "evidence-001",
+  "evidence_type": "architecture_document",
+  "source": "docs/ARCHITECTURE.md",
+  "timestamp": "2026-07-07T00:00:00Z",
+  "quality_score": 90,
+  "independent": true,
+  "confidence_contribution": 80,
+  "related_decision": "Confirm KAVEEP-POLICY governs execution-capable agents.",
+  "related_risk_level": "R1",
+  "notes": "Used as one independent evidence source for policy alignment."
+}
