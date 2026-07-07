@@ -1,0 +1,13 @@
+{
+  "action_id": "risk-001",
+  "action_name": "Scan repository structure",
+  "risk_level": "R0",
+  "risk_reason": "Read-only repository observation with no modification.",
+  "confidence_score": 95,
+  "evidence_count": 1,
+  "approval_required": false,
+  "simulation_required": false,
+  "rollback_available": false,
+  "execution_allowed": false,
+  "notes": "Observation only. No execution is performed."
+}
