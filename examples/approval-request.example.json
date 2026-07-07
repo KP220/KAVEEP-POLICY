@@ -1,0 +1,15 @@
+{
+  "request_id": "approval-001",
+  "action_name": "Open pull request for documentation update",
+  "risk_level": "R3",
+  "approval_level": "A2",
+  "reason": "A real repository action will create a pull request, but it is reversible and reviewable.",
+  "expected_impact": "A new pull request will be opened for human review.",
+  "evidence_summary": "README, architecture document, and related SPEC files were checked.",
+  "confidence_score": 88,
+  "simulation_completed": true,
+  "rollback_available": true,
+  "user_approval_required": true,
+  "approval_status": "pending",
+  "notes": "Execution must wait for explicit user approval."
+}
