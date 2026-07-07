@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/evidence-record.schema.json",
+  "title": "KAVEEP Evidence Record",
+  "type": "object",
+  "required": [
+    "evidence_id",
+    "evidence_type",
+    "source",
+    "timestamp",
+    "quality_score",
+    "independent",
+    "confidence_contribution",
+    "related_risk_level"
+  ],
+  "properties": {
+    "evidence_id": {
+      "type": "string"
+    },
+    "evidence_type": {
+      "type": "string",
+      "enum": [
+        "file_metadata",
+        "repository_structure",
+        "source_code",
+        "test_result",
+        "system_log",
+        "user_instruction",
+        "architecture_document",
+        "historical_record",
+        "agent_report",
+        "other"
+      ]
+    },
+    "source": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "quality_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "independent": {
+      "type": "boolean"
+    },
+    "confidence_contribution": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "related_decision": {
+      "type": "string"
+    },
+    "related_risk_level": {
+      "type": "string",
+      "enum": ["R0", "R1", "R2", "R3", "R4", "R5"]
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
