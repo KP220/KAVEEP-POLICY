@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/policy-report.schema.json",
+  "title": "KAVEEP Policy Report",
+  "description": "POLICY-owned report artifact composed with the canonical KAVEEP-CORE report envelope. Domain-specific report details live under metadata.policyPayload.",
+  "allOf": [
+    {
+      "$ref": "../../KAVEEP-CORE/schemas/report-envelope.schema.json"
+    },
+    {
+      "type": "object",
+      "required": ["metadata"],
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "required": ["policyPayload"],
+          "properties": {
+            "policyPayload": {
+              "type": "object",
+              "description": "KAVEEP-POLICY-owned payload for report artifacts only. Canonical policy records remain in their native schemas.",
+              "required": [
+                "policyReportType",
+                "decisionOutcome",
+                "riskClassification",
+                "approvalLevel",
+                "evidenceConvergence",
+                "recommendedAction",
+                "summary",
+                "reviewedPolicyRefs",
+                "reviewedEvidenceRefs"
+              ],
+              "properties": {
+                "policyReportType": {
+                  "type": "string",
+                  "enum": [
+                    "safety_review",
+                    "risk_assessment_summary",
+                    "approval_review",
+                    "evidence_convergence_summary",
+                    "integration_review"
+                  ]
+                },
+                "decisionOutcome": {
+                  "type": "string",
+                  "description": "Report-level outcome. no_action is the safe default for report artifacts.",
+                  "enum": [
+                    "no_action",
+                    "recommendation",
+                    "simulation_required",
+                    "approval_required",
+                    "blocked"
+                  ],
+                  "default": "no_action"
+                },
+                "riskClassification": {
+                  "type": "string",
+                  "enum": ["R0", "R1", "R2", "R3", "R4", "R5"]
+                },
+                "approvalLevel": {
+                  "type": "string",
+                  "enum": ["A0", "A1", "A2", "A3", "A4"]
+                },
+                "evidenceConvergence": {
+                  "type": "string",
+                  "enum": ["C0", "C1", "C2", "C3", "C4", "C5"]
+                },
+                "recommendedAction": {
+                  "type": "string",
+                  "description": "Recommended next action for the report artifact. Use no_action when evidence is insufficient or no approved action exists.",
+                  "enum": [
+                    "no_action",
+                    "gather_more_evidence",
+                    "simulate_first",
+                    "request_human_approval",
+                    "record_policy_decision"
+                  ],
+                  "default": "no_action"
+                },
+                "summary": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "insufficientEvidence": {
+                  "type": "boolean",
+                  "description": "True when evidence is missing, inaccessible, conflicting, or not independently converged."
+                },
+                "reviewedPolicyRefs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^policy_[A-Za-z0-9][A-Za-z0-9_-]*$"
+                  },
+                  "uniqueItems": true
+                },
+                "reviewedEvidenceRefs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^evidence_[A-Za-z0-9][A-Za-z0-9_-]*$"
+                  },
+                  "uniqueItems": true
+                },
+                "notes": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        }
+      }
+    }
+  ]
+}

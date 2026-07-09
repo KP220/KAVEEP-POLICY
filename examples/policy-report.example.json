@@ -1,0 +1,51 @@
+{
+  "reportId": "report_policy_alignment_001",
+  "sessionId": "session_policy_alignment_001",
+  "module": "KAVEEP-POLICY",
+  "moduleVersion": "0.1.0",
+  "contractVersion": "1.0.0",
+  "status": "no_action",
+  "verificationStatus": "unverified",
+  "riskLevel": "low",
+  "evidenceRefs": [
+    "evidence_policy_alignment_001"
+  ],
+  "policyRefs": [
+    "policy_safety_rules",
+    "policy_risk_classification"
+  ],
+  "auditRefs": [
+    "audit_policy_report_created_001"
+  ],
+  "warnings": [
+    {
+      "code": "INSUFFICIENT_EVIDENCE",
+      "message": "Report remains unverified until independent evidence convergence is available.",
+      "severity": "warning",
+      "source": "KAVEEP-POLICY"
+    }
+  ],
+  "errors": [],
+  "metadata": {
+    "policyPayload": {
+      "policyReportType": "integration_review",
+      "decisionOutcome": "no_action",
+      "riskClassification": "R0",
+      "approvalLevel": "A0",
+      "evidenceConvergence": "C1",
+      "recommendedAction": "no_action",
+      "summary": "Read-only report artifact documenting POLICY alignment with the CORE report envelope.",
+      "insufficientEvidence": true,
+      "reviewedPolicyRefs": [
+        "policy_safety_rules",
+        "policy_risk_classification"
+      ],
+      "reviewedEvidenceRefs": [
+        "evidence_policy_alignment_001"
+      ],
+      "notes": "Safe default is no_action; verification remains unverified because evidence convergence is insufficient."
+    }
+  },
+  "createdAt": "2026-07-09T00:00:00Z",
+  "updatedAt": "2026-07-09T00:00:00Z"
+}
